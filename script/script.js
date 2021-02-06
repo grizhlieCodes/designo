@@ -12,7 +12,12 @@ burger.addEventListener('click', () => {
     })
 
     disNone.forEach(el => {
-        el.classList.toggle('dis-full')
+
+        if(el.classList.contains('dark-backdrop')){
+            el.classList.toggle('dis-opa')
+        } else {
+            el.classList.toggle('dis-full')
+        }
     })
     
 })

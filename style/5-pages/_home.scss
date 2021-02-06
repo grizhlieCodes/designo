@@ -134,6 +134,10 @@
     grid-template-rows: repeat(autofill, 1fr); //autofill = 3 rows of 1fr = 1 row = 33.33%
     gap: 8rem;
 
+    @include breakpoint(tablet){
+        gap: 3.2rem;
+    }
+
     @include breakpoint(desktop){
         grid-auto-flow: column;
         grid-template-columns: repeat(3, 1fr);
@@ -162,6 +166,7 @@
             grid-template-columns: 20.2rem 1fr;
             grid-template-rows:  1fr;
             column-gap: 4.8rem;
+            align-items: center;
 
             .text-container {
                 h3, p {

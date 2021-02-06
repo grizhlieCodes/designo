@@ -1,7 +1,7 @@
 main {
-    //This will house our 'main sections' of the home-page. 
-    //We use grid code from below as well as our global.scss file.
 
+    //The columns for all pages are identical. 
+    //This can be found in 3-layout/_sharedMain
 
     //Study grid-areas in order to understand the structure.
     &.main__home {

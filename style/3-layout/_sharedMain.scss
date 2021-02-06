@@ -15,4 +15,5 @@ main {
     @include breakpoint(desktop){
         grid-template-columns: minmax(100%, 1111px); 
     }
+
 }
