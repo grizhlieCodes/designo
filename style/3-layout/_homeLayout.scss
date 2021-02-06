@@ -1,0 +1,39 @@
+main {
+    //This will house our 'main sections' of the home-page. 
+    //We use grid code from below as well as our global.scss file.
+
+
+    //Study grid-areas in order to understand the structure.
+    &.main__home {
+        
+        //Mobile
+        grid-template-rows: 84.3rem 79.8rem 139.6rem 0.1rem;
+        row-gap: 12rem;
+        grid-template-areas: 
+        "hero    hero     hero"
+        "... project-cards ..."
+        "...  about-cards  ..."
+        "...   .......     ...";
+
+        @include breakpoint(tablet){
+            grid-template-rows: 84.3rem 79.8rem 67rem 0.1rem;
+            grid-template-areas:
+            "...     hero      ..."
+            "... project-cards ..."
+            "..... about-cards ..."
+            "...       ...     ...";
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-rows: 64rem 64rem 41.2rem 6rem;
+            grid-template-areas:
+            "hero"
+            "project-cards"
+            "about-cards"
+            ".";
+        }
+        .home__hero { grid-area: hero; }
+        .project-cards {grid-area: project-cards; }
+        .about-cards { grid-area: about-cards; }
+    }
+}

@@ -1,0 +1,186 @@
+.home__hero {
+    background: v(peach);
+    // grid-area: hero;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 11.8rem 1.4rem 10rem 2.4rem 5.6rem 1fr;
+    grid-template-areas: 
+    "....."
+    "title"
+    "....."
+    "context"
+    "....."
+    "button"
+    "....."
+    ;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    @include breakpoint(tablet){
+        grid-template-rows: 6.1rem 13.7rem 3.6rem 7.1rem 2.6rem 5.6rem 1fr;
+        grid-template-areas: 
+        "....."
+        "title"
+        "....."
+        "context"
+        "....."
+        "button"
+        "....."
+        ;
+    }
+
+    @include breakpoint(desktop){
+        grid-template-rows: 14.5rem 13.7rem 3.7rem 7.1rem 4.7rem 5.6rem 14.5rem;
+        grid-template-columns: 9.5rem 47.5rem 1fr;
+        grid-template-areas: 
+        "...    ...   ..."
+        "...  title   ..."
+        "...   ...    ..."
+        "... context  ..."
+        "...   ...    ..."
+        "...  button  ..."
+        "...   ...    ...";        
+        justify-items: left;
+    }
+
+    .hero__title {grid-area: title;}
+    .hero__button {grid-area: button;}
+    .hero__context { grid-area: context;}
+
+
+
+    .hero__title,
+    .hero__context,
+    .hero__button {
+        z-index: 5;
+    }
+    
+    .hero__title,
+    .hero__context {
+        color: v(white);
+        max-width: 32.7rem;
+        text-align: center;
+    }
+
+    .hero__title {
+        // grid-area: title;
+
+        @include breakpoint(tablet) {
+            max-width: 57.3rem;
+        }
+
+        @include breakpoint(desktop){
+            max-width: 47.5rem;
+            text-align: left;
+        }
+    }
+    .hero__context {
+        // grid-area: context;
+        @include breakpoint(tablet) {
+            max-width: 44.5rem;
+        }
+        @include breakpoint(desktop){
+            max-width: 43.5rem;
+            text-align: left;
+        }
+    }
+
+
+    .hero__bk-img {
+        width: 64rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 0;
+
+        @include breakpoint(tablet) {
+            left: unset;
+            right: -8.5rem;
+            top: 10.2rem;
+        }
+
+        @include breakpoint(desktop) {
+            right: 0;
+            left: unset;
+            top: 0;
+            transform: translateY(0%);
+
+        }
+
+
+    }
+
+    .hero__phone-img {
+        position: absolute;
+        bottom: -36rem;
+        z-index: 0;
+
+        @include breakpoint(desktop) {
+            right: -8rem;
+            bottom: -24rem;
+        }
+    }
+}
+
+//My project-card SCSS is elsewhere (see components)
+
+.about-cards {
+    // grid-area: about-cards;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(autofill, 1fr); //autofill = 3 rows of 1fr = 1 row = 33.33%
+    gap: 8rem;
+
+    @include breakpoint(desktop){
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column: 1/2;
+        gap: 3rem;
+    }
+
+    .about-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20.2rem 1fr; //33.33% ^
+        row-gap: 4.8rem;
+        justify-items: center;
+
+        .text-container {
+            h3, p {
+                text-align: center;
+            }
+            h3 {
+                margin-bottom: 3.4rem;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1110px){
+            grid-template-columns: 20.2rem 1fr;
+            grid-template-rows:  1fr;
+            column-gap: 4.8rem;
+
+            .text-container {
+                h3, p {
+                    text-align: left;
+                }
+                h3 {
+                        margin-bottom: 1.6rem;
+                }
+            }
+        }
+
+        .img-container {
+            height: 20.2rem;
+            width: 20.2rem;
+            position: relative;
+
+            img {
+                position: absolute;
+            }
+        }
+    }
+}

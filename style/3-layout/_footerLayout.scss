@@ -1,0 +1,68 @@
+//Footer layout
+footer {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 2.4rem 1fr 2.4rem;
+    grid-template-rows: 19rem 18.9rem 6.4rem 2.4rem 3.5rem 0.1rem 3.2rem 10.6rem 4rem 7.8rem 4rem 7.8rem 4rem 2.4rem 6.4rem;
+    grid-template-areas:
+    "... call-to-action ..." //1/2
+    "... call-to-action ..." //2/3
+    "...      ...       ..." //3/4
+    "...      logo      ..." //4/5
+    "...      ...       ..." //5/6
+    "...     divider    ..." //6/7
+    "...      ...       ..." //7
+    "...     links      ..." //8
+    "...      ...       ..." //9
+    "...    address     ..." //10
+    "...      ...       ..." //11
+    "...    contact     ..." //12
+    "...      ...       ..." //13
+    ".  socialMedia-icons ." //14
+    "...      ...       ..." //14
+    ;
+
+    @include breakpoint(tablet){
+        grid-template-columns: 1fr 23.3rem 27.3rem 18.4rem 1fr ;
+        grid-template-rows: 26.4rem 8.6rem 8rem 2.7rem 4rem 0.1rem 3.1rem 7.8rem 8rem;
+        grid-template-areas:
+        "... call-to-action call-to-action call-to-action ..." //1/2
+        "... call-to-action call-to-action call-to-action ..." //2/3
+        "...          ...          ...        ...         ..." //3/4
+        "...        logo       links        links         ..." //4/5
+        "...          ...          ...        ...         ..." //5/6
+        "...       divider     divider     divider        ..." //6/7
+        "...          ...          ...        ...         ..." //7/8
+        "...    address    contact   socialMedia-icons    ..." //8/9
+        "...          ...          ...        ...         ..." //9/10
+        ;
+    }
+
+    @include breakpoint(desktop){
+        grid-template-columns: 1fr 38.1rem 55rem 18.4rem 1fr ;
+        grid-template-rows: 21.7rem 7.1rem 7.1rem 2.7rem 3.9rem 0.1rem 3.1rem 7.7rem 5.2rem;
+        grid-template-areas:
+        "... call-to-action call-to-action call-to-action ..." //1/2
+        "... call-to-action call-to-action call-to-action ..." //2/3
+        "...          ...          ...        ...         ..." //3/4
+        "...        logo       links        links         ..." //4/5
+        "...          ...          ...        ...         ..." //5/6
+        "...       divider     divider     divider        ..." //6/7
+        "...          ...          ...        ...         ..." //7/8
+        "...    address    contact   socialMedia-icons    ..." //8/9
+        "...          ...          ...        ...         ..." //9/10
+        ;
+    }
+
+    
+
+
+    .call-to-action{grid-area: call-to-action;}
+    .logo-container{grid-area: logo;}
+    .divider{grid-area: divider;}
+    .links{grid-area: links;}
+    .address{grid-area: address;}
+    .contact{grid-area: contact;}
+    .socialMedia-icons{grid-area: socialMedia-icons;}
+}

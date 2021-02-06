@@ -1,0 +1,36 @@
+//My entire website will be a max width of 1111px. All my content will
+//essentially be 100% width.
+//Body happens to be a flex-parent for:
+    //Header, Main & Footer
+
+body {
+    max-width: 111.1rem;
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(100%, 1111px);
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+
+    @include breakpoint(desktop){
+        max-width: 100%;
+        grid-template-columns: 1fr 1111px 1fr;
+        //TODO: Investigate why minmax(100%, 1111px) sticks to the 100% instead
+        //the 1111px
+
+        //Answer: If max is smaller than min, then minmax is turned to min and max is ignored.
+        //so above code would result in min(100%)
+        grid-template-areas: 
+        "... header ..."
+        "... main ..."
+        "footer footer footer"
+        ;
+    }
+
+    header {grid-area: header;}
+    main {grid-area: main;}
+    footer {grid-area: footer;}
+}

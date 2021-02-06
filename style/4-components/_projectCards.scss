@@ -1,0 +1,160 @@
+//This is all dependant upon the grid-columns + rows of 'MAIN'.
+
+//To use the below code correctly simply use the HTML project-card code from
+//homepage
+
+//Then simply check what height the project-cards section is on a page 
+//... and make sure that the section goes into the correct grid-cell.
+
+
+
+//below code works for 3 or 2 cards.
+.project-cards {
+    // grid-area: project-cards;
+    row-gap: 2.4rem;
+    display: grid;
+    // grid-auto-flow: column;
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat(autofill, 25rem);
+
+    @include breakpoint(tablet){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(autofill, 20rem);
+    }
+
+    @include breakpoint(desktop) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}
+
+//Project Card Styling
+.project-card {
+    grid-column: 1/2;
+    @include flex(row, wrap, center, center);
+    position: relative;
+    
+    //dark-opacity over image
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: v(black);
+        z-index: -1;
+        opacity: 0.7;
+        border-radius: 1.5rem;
+    }
+
+    //peach-opacity over image on hover
+    &:hover::after {
+        background: v(peach);
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    //basic styling for the text for project-cards
+    .text-container {
+        color: v(white);
+
+        .project-card__title {
+            margin-bottom: 1.2rem;
+
+            @include breakpoint(tablet) {
+                margin-bottom: 2.4rem;
+            }
+        }
+
+        .discriptor {
+            @include flex(row, nowrap, center, center);
+
+             img {
+                 margin-left: 1.8rem;
+             }
+        }
+    }
+
+    //basic styling for the image for project-cards
+    .img-container {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 1.5rem;
+        }
+    }
+}
+
+//Project card: Use correct img per viewport size
+.project-card .img-container {
+
+    //show 1st image on mob
+    img:nth-child(1) {
+        display: block;
+        position: absolute;
+    }
+
+    //hide not:1st image on mob
+    img:not(:nth-child(1)){
+        display: none;
+    }
+
+
+    //Tablet of above
+    @include breakpoint(tablet) {
+        //show 2nd image on tablet
+        img:nth-child(2) {
+            display: block;
+            position: absolute;
+        }
+        //show 2nd image on tablet
+        img:not(:nth-child(2)){
+            display: none;
+        }
+    }
+
+    //Desktop of above
+    @include breakpoint(desktop) {
+        //show 3rd image on tablet
+        img:nth-child(3) {
+            display: block;
+            position: absolute;
+        }
+
+        //show 3rd image on tablet
+        img:not(:nth-child(3)){
+            display: none;
+        }
+    }
+}
+
+//Project card: position the cards correctly in project-cards grid.
+.project-card {
+    @include breakpoint(desktop) {
+
+        //if 1st card, place in first col
+        &:nth-child(1){
+            grid-column: 1/2; //Span across 
+            grid-row: 1/3; // Span across 2 row
+        }
+
+        //if not 1st card, place in 2nd col
+        &:not(:nth-child(1)){
+            grid-column: 2/3;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+//Everything will be using border-box to make calculations easier.
+body, *, :root {
+    box-sizing: border-box;
+}
+
+//Essentially remove the below classes above tablet-size.
+//(When normal desktop styled menu pops up)
+@media screen and (max-width: 767px){
+    .dis-none {
+        transform-origin: 0 0;
+        transform: scale(1, 0.3);
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+    }
+    
+    .dis-full {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+

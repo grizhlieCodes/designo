@@ -1,0 +1,33 @@
+
+//This is what i use when i use flexbox (single SCSS line to declare it all)
+@mixin flex($direction, $wrap, $justify, $align){
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+//Perfectly enter a single child element. 
+@mixin grid-center(){
+    display: grid;
+    place-items: center;
+}
+
+//Mobile first -> Tablet -> Desktop
+//Media queries for Tablet and Desktop sized screens respectively.
+@mixin breakpoint($point){
+    @if ($point == tablet) {
+        @media screen and (min-width: 768px) {@content;}
+    }
+
+    @else if ($point == desktop) {
+        @media screen and (min-width: 1111px) {@content;}
+    }
+}
+
+
+//The v-function is used to write cleaner variables (makes them easier to read)
+@function v($var){
+    @return var(--#{$var});
+}

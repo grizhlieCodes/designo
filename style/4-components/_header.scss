@@ -1,0 +1,134 @@
+//Flex 
+
+header {
+    height: 9.6rem;
+    width: 100%;
+    max-width: 1111px;
+    @include flex(row, nowrap, space-between, center);
+    padding: 0 2.4rem;
+    position: relative;
+    z-index: 50;
+    background: v(white);
+
+    @include breakpoint(tablet) {
+        padding: 0 3.9rem;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0;
+    }
+
+    
+}
+
+.logo-container {
+    flex: 0 0 auto;
+    max-width: 20.2rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+//our links
+nav {
+    @include flex(row, nowrap, flex-end, center);
+    flex-grow: 1;
+    height: 100%;
+}
+
+.menu-button {
+    margin-top: -5px;
+    width: 2.4rem;
+    height: 100%;
+    cursor: pointer;
+    @include flex(column, wrap, center, center);
+
+    span {
+        height: 0.4rem;
+        width: 100%;
+        background: v(black);
+        transition: all 250ms ease-in-out;
+        transform-origin: 0.9px 2px;
+
+        &:not(:nth-child(3)){
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        display: none
+    }
+}
+
+
+span.clicked {
+    &:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+        transform: scale(0.1, 0.1);
+        opacity: 0;
+    }
+
+    &:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+}
+
+
+.navigation-links {
+    @include flex(column, wrap, flex-start, auto);
+    width: 100%;
+    height: 23.5rem;
+    padding: 4.8rem 2.5rem;
+    position: absolute;
+    top: 9.6rem;
+    right: 0;
+    left: 0;
+    background: v(dark-grey);
+
+    a {
+        &:not(:nth-child(3)){
+            margin-bottom: 3.2rem;
+        }
+
+        @include breakpoint(tablet) {
+            &:not(:nth-child(3)){
+                margin-bottom: unset;
+                margin-right: 4.2rem;
+            }
+        }
+    }
+
+    @include breakpoint(tablet){
+        @include flex(row, nowrap, flex-end, center);
+        position: unset;
+        opacity: 1;
+        top: unset;
+        left: unset;
+        right: unset;
+        color: v(black);
+        height: auto;
+        width: auto;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.dark-backdrop {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: v(black);
+
+    @include breakpoint(tablet) {
+        background: transparent;
+        display: none;
+    }
+}

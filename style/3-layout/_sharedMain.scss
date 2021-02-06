@@ -1,0 +1,18 @@
+//Every page will use the below main template-columns. That's why it's in
+//global.
+
+//The logic here is to use columns as width and margin.
+
+main {
+    height: auto;
+    display: grid;
+    grid-template-columns: 2.4rem 1fr 2.4rem; 
+
+    @include breakpoint(tablet){
+        grid-template-columns: 3.9rem 1fr 3.9rem; 
+    }
+
+    @include breakpoint(desktop){
+        grid-template-columns: minmax(100%, 1111px); 
+    }
+}
