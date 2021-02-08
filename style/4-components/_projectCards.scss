@@ -156,5 +156,12 @@
         &:not(:nth-child(1)){
             grid-column: 2/3;
         }
+
+
+        &:last-child {
+            &:not(:nth-child(3)){
+                grid-row: 1/3;
+            }
+        }
     }
 }

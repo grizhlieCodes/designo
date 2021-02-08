@@ -34,13 +34,13 @@ footer {
 
     .text-container {
         h1 {
-            margin-bottom: 1.6rem;
+            padding-bottom: 1.6rem;
             width: 27.9rem;
             text-align: center;
             margin: auto;
 
             @include breakpoint(tablet){
-                margin-bottom: 1.3rem;
+                padding-bottom: 1.3rem;
                 width: 28.7rem;
                 line-height: 4rem;
             }

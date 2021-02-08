@@ -4,36 +4,37 @@ main {
     //This can be found in 3-layout/_sharedMain
 
     //Study grid-areas in order to understand the structure.
-    &.__home {
+    &.__web-design {
         
         //Mobile
-        grid-template-rows: 84.3rem 79.8rem 139.6rem 0.1rem;
-        row-gap: 12rem;
+        grid-template-rows: 32rem 306.8rem 52.4rem 0.1rem;
+        row-gap: 9.6rem;
         grid-template-areas: 
         "hero    hero     hero"
-        "... project-cards ..."
-        "...  about-cards  ..."
+        "...   work-cards  ..."
+        "...  project-cards ..."
         "...   .......     ...";
 
         @include breakpoint(tablet){
-            grid-template-rows: 84.3rem 79.8rem 67rem 0.1rem;
+            grid-template-rows: 25.2rem 203rem 42.4rem 0.1rem;
+            row-gap: 12rem;
             grid-template-areas:
             "...     hero      ..."
-            "... project-cards ..."
-            "..... about-cards ..."
+            "...   work-cards  ..."
+            "...  project-cards ..."
             "...       ...     ...";
         }
 
         @include breakpoint(desktop) {
-            grid-template-rows: 64rem 64rem 41.2rem 6rem;
+            grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
             grid-template-areas:
             "hero"
+            "work-cards"
             "project-cards"
-            "about-cards"
             ".";
         }
-        .home__hero { grid-area: hero; }
+        .shared__hero { grid-area: hero; }
         .project-cards {grid-area: project-cards; }
-        .about-cards { grid-area: about-cards; }
+        .work-cards { grid-area: work-cards; }
     }
 }

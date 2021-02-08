@@ -261,36 +261,69 @@ main {
   }
 }
 
-main.main__home {
+main.__home {
   grid-template-rows: 84.3rem 79.8rem 139.6rem 0.1rem;
   row-gap: 12rem;
   grid-template-areas: "hero    hero     hero" "... project-cards ..." "...  about-cards  ..." "...   .......     ...";
 }
 
 @media screen and (min-width: 768px) {
-  main.main__home {
+  main.__home {
     grid-template-rows: 84.3rem 79.8rem 67rem 0.1rem;
     grid-template-areas: "...     hero      ..." "... project-cards ..." "..... about-cards ..." "...       ...     ...";
   }
 }
 
 @media screen and (min-width: 1111px) {
-  main.main__home {
+  main.__home {
     grid-template-rows: 64rem 64rem 41.2rem 6rem;
     grid-template-areas: "hero" "project-cards" "about-cards" ".";
   }
 }
 
-main.main__home .home__hero {
+main.__home .home__hero {
   grid-area: hero;
 }
 
-main.main__home .project-cards {
+main.__home .project-cards {
   grid-area: project-cards;
 }
 
-main.main__home .about-cards {
+main.__home .about-cards {
   grid-area: about-cards;
+}
+
+main.__web-design {
+  grid-template-rows: 32rem 306.8rem 52.4rem 0.1rem;
+  row-gap: 9.6rem;
+  grid-template-areas: "hero    hero     hero" "...   work-cards  ..." "...  project-cards ..." "...   .......     ...";
+}
+
+@media screen and (min-width: 768px) {
+  main.__web-design {
+    grid-template-rows: 25.2rem 203rem 42.4rem 0.1rem;
+    row-gap: 12rem;
+    grid-template-areas: "...     hero      ..." "...   work-cards  ..." "...  project-cards ..." "...       ...     ...";
+  }
+}
+
+@media screen and (min-width: 1111px) {
+  main.__web-design {
+    grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
+    grid-template-areas: "hero" "work-cards" "project-cards" ".";
+  }
+}
+
+main.__web-design .shared__hero {
+  grid-area: hero;
+}
+
+main.__web-design .project-cards {
+  grid-area: project-cards;
+}
+
+main.__web-design .work-cards {
+  grid-area: work-cards;
 }
 
 footer {
@@ -658,6 +691,9 @@ span.clicked:nth-child(3) {
   .project-card:not(:nth-child(1)) {
     grid-column: 2/3;
   }
+  .project-card:last-child:not(:nth-child(3)) {
+    grid-row: 1/3;
+  }
 }
 
 footer::before {
@@ -704,7 +740,7 @@ footer::before {
 }
 
 .call-to-action .text-container h1 {
-  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
   width: 27.9rem;
   text-align: center;
   margin: auto;
@@ -712,7 +748,7 @@ footer::before {
 
 @media screen and (min-width: 768px) {
   .call-to-action .text-container h1 {
-    margin-bottom: 1.3rem;
+    padding-bottom: 1.3rem;
     width: 28.7rem;
     line-height: 4rem;
   }
@@ -844,6 +880,187 @@ footer .socialMedia-icons {
 
 footer .socialMedia-icons a:not(:nth-last-child(1)) {
   margin-right: 1.6rem;
+}
+
+.hero__shared-banner {
+  background: var(--peach);
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6.4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__shared-banner {
+    padding: 5.7rem 0;
+    border-radius: 1.5rem;
+  }
+}
+
+.hero__shared-banner .text-container {
+  margin: auto;
+}
+
+.hero__shared-banner .text-container h1 {
+  padding-bottom: 1.6rem;
+  width: 27.9rem;
+  text-align: center;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__shared-banner .text-container h1 {
+    padding-bottom: 1.3rem;
+    width: 28.7rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (min-width: 1111px) {
+  .hero__shared-banner .text-container h1 {
+    width: 26.9rem;
+  }
+}
+
+.hero__shared-banner .text-container p {
+  width: 27.9rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__shared-banner .text-container p {
+    width: 43.3rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1111px) {
+  .hero__shared-banner .text-container p {
+    width: 41rem;
+  }
+}
+
+.hero__shared-banner img {
+  position: absolute;
+  top: 50%;
+  transform: translate(4%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .hero__shared-banner img {
+    transform: translateX(5%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero__shared-banner img {
+    right: 0;
+    transform: translate(0%, -50%);
+  }
+}
+
+.work-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, 47.8rem);
+  row-gap: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .work-cards {
+    grid-template-rows: repeat(auto-fit, 31rem);
+  }
+}
+
+@media screen and (min-width: 1111px) {
+  .work-cards {
+    grid-template-rows: repeat(2, 47.8rem);
+    grid-template-columns: repeat(3, 35rem);
+    gap: 3.2rem 3rem;
+  }
+}
+
+.work-card {
+  border-radius: 1.5rem;
+  margin: 0 auto;
+  max-width: 32.7rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background: #FDF3F0;
+  overflow: hidden;
+}
+
+.work-card:hover {
+  background: var(--peach);
+  cursor: pointer;
+}
+
+.work-card:hover .text-container p, .work-card:hover .text-container h3 {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1110px) {
+  .work-card {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 68.9rem;
+  }
+}
+
+@media screen and (min-width: 1111px) {
+  .work-card {
+    max-width: unset;
+  }
+}
+
+.work-card .img-container {
+  flex: 0 0 0;
+  height: 32rem;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1110px) {
+  .work-card .img-container {
+    flex: 0 0 50%;
+  }
+}
+
+.work-card .img-container img {
+  width: 100%;
+}
+
+.work-card .text-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  text-align: center;
+  padding: 0 4rem;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1110px) {
+  .work-card .text-container {
+    flex: 0 0 50%;
+  }
+}
+
+.work-card .text-container h3 {
+  color: var(--peach);
+  text-transform: uppercase;
+  flex-grow: 0;
+  padding-bottom: 1.6rem;
+}
+
+.work-card .text-container p {
+  flex-grow: 0;
 }
 
 .home__hero {

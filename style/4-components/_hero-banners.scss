@@ -1,0 +1,65 @@
+//Call to action styling
+
+
+//THIS IS ALMOST IDENTICAL TO FOOTER STYLING. MOST CODE WAS JUST COPIED.
+
+.hero__shared-banner {
+    background: v(peach);
+    height: 100%;
+    @include flex(column, wrap, space-between, center);
+    padding: 6.4rem 0;
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint(tablet){
+        padding: 5.7rem 0;
+        border-radius: 1.5rem;
+    }
+
+    .text-container {
+        margin: auto;
+        h1 {
+            padding-bottom: 1.6rem;
+            width: 27.9rem;
+            text-align: center;
+            margin: auto;
+
+            @include breakpoint(tablet){
+                padding-bottom: 1.3rem;
+                width: 28.7rem;
+                line-height: 4rem;
+            }
+
+            @include breakpoint(desktop){
+                width: 26.9rem;
+            }
+        }
+
+        p {
+            width: 27.9rem;
+            text-align: center;
+
+            @include breakpoint(tablet){
+                width: 43.3rem;
+                font-size: 1.6rem;
+            }
+            @include breakpoint(desktop){
+                width: 41rem;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translate(4%, -50%);
+
+        @include breakpoint(tablet){
+            transform: translateX(5%);
+        }
+        @include breakpoint(tablet){
+            right: 0;
+            transform: translate(0%, -50%);
+        }
+    }
+}
