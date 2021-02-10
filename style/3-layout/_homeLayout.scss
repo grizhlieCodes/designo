@@ -11,7 +11,7 @@ main {
         row-gap: 12rem;
         grid-template-areas: 
         "hero    hero     hero"
-        "... project-cards ..."
+        "... project-type-cards ..."
         "...  about-cards  ..."
         "...   .......     ...";
 
@@ -19,7 +19,7 @@ main {
             grid-template-rows: 84.3rem 79.8rem 67rem 0.1rem;
             grid-template-areas:
             "...     hero      ..."
-            "... project-cards ..."
+            "... project-type-cards ..."
             "..... about-cards ..."
             "...       ...     ...";
         }
@@ -28,12 +28,12 @@ main {
             grid-template-rows: 64rem 64rem 41.2rem 6rem;
             grid-template-areas:
             "hero"
-            "project-cards"
+            "project-type-cards"
             "about-cards"
             ".";
         }
         .home__hero { grid-area: hero; }
-        .project-cards {grid-area: project-cards; }
+        .project-type-cards {grid-area: project-type-cards; }
         .about-cards { grid-area: about-cards; }
     }
 }

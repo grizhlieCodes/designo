@@ -18,17 +18,18 @@
 @import '3-layout/homeLayout';
 @import '3-layout/webDesLayout';
 @import '3-layout/footerLayout';
-
+@import '3-layout/appDesLayout';
+@import '3-layout/graphDesLayout';
 
 
 
 //4-COMPONENTS
 @import '4-components/buttons';
 @import '4-components/header';
-@import '4-components/projectCards';
+@import '4-components/project-type-cards';
 @import '4-components/footer';
 @import '4-components/hero-banners';
-@import '4-components/work-cards';
+@import '4-components/project-cards';
 //do links as well
 
 

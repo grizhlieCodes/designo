@@ -4,10 +4,10 @@ main {
     //This can be found in 3-layout/_sharedMain
 
     //Study grid-areas in order to understand the structure.
-    &.__web-design {
+    &.__graphic-design {
         
         //Mobile
-        grid-template-rows: 32rem 306.8rem 52.4rem 0.1rem;
+        grid-template-rows: 32rem 151.4rem 52.4rem 0.1rem;
         row-gap: 9.6rem;
         grid-template-areas: 
         "hero    hero     hero"
@@ -16,7 +16,7 @@ main {
         "...   .......     ...";
 
         @include breakpoint(tablet){
-            grid-template-rows: 25.2rem 203rem 42.4rem 0.1rem;
+            grid-template-rows: 25.2rem 100.4rem 42.4rem 0.1rem;
             row-gap: 12rem;
             grid-template-areas:
             "...     hero      ..."
@@ -26,7 +26,7 @@ main {
         }
 
         @include breakpoint(desktop) {
-            grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
+            grid-template-rows: 25.2rem 47.8rem 30.8rem 6rem;
             grid-template-areas:
             "hero"
             "project-cards"

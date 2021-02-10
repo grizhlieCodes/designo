@@ -9,7 +9,7 @@
 
 
 //below code works for 3 or 2 cards.
-.project-cards {
+.project-type-cards {
     // grid-area: project-cards;
     row-gap: 2.4rem;
     display: grid;
@@ -30,7 +30,7 @@
 }
 
 //Project Card Styling
-.project-card {
+.project-type-card {
     grid-column: 1/2;
     @include flex(row, wrap, center, center);
     position: relative;
@@ -100,7 +100,7 @@
 }
 
 //Project card: Use correct img per viewport size
-.project-card .img-container {
+.project-type-card .img-container {
 
     //show 1st image on mob
     img:nth-child(1) {
@@ -143,7 +143,7 @@
 }
 
 //Project card: position the cards correctly in project-cards grid.
-.project-card {
+.project-type-card {
     @include breakpoint(desktop) {
 
         //if 1st card, place in first col
