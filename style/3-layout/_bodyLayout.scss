@@ -14,22 +14,21 @@ body {
     "main"
     "footer"
     ;
-
+                                                                                        
     @include breakpoint(desktop){
         max-width: 100%;
-        grid-template-columns: 1fr 1111px 1fr;
+        grid-template-columns: 1fr minmax(1000px, 1111px) 1fr;
         //TODO: Investigate why minmax(100%, 1111px) sticks to the 100% instead
         //the 1111px
-
-        //Answer: If max is smaller than min, then minmax is turned to min and max is ignored.
+        //////ANSWER///// If max is smaller than min, then minmax is turned to min and max is ignored.
         //so above code would result in min(100%)
         grid-template-areas: 
-        "... header ..."
-        "... main ..."
+        "...    header    ..."
+        "...     main     ..."
         "footer footer footer"
         ;
     }
-
+                                                                                        
     header {grid-area: header;}
     main {grid-area: main;}
     footer {grid-area: footer;}

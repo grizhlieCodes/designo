@@ -223,11 +223,11 @@ body {
   grid-template-areas: "header" "main" "footer";
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   body {
     max-width: 100%;
-    grid-template-columns: 1fr 1111px 1fr;
-    grid-template-areas: "... header ..." "... main ..." "footer footer footer";
+    grid-template-columns: 1fr minmax(1000px, 1111px) 1fr;
+    grid-template-areas: "...    header    ..." "...     main     ..." "footer footer footer";
   }
 }
 
@@ -255,7 +255,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   main {
     grid-template-columns: minmax(100%, 1111px);
   }
@@ -279,7 +279,7 @@ main.__home {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   main.__home {
     grid-template-rows: 64rem 64rem 41.2rem 6rem;
     grid-template-areas: "hero" "project-type-cards" "about-cards" ".";
@@ -312,7 +312,7 @@ main.__web-design {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   main.__web-design {
     grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
@@ -348,7 +348,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   footer {
     grid-template-columns: 1fr 38.1rem 55rem 18.4rem 1fr;
     grid-template-rows: 21.7rem 7.1rem 7.1rem 2.7rem 3.9rem 0.1rem 3.1rem 7.7rem 5.2rem;
@@ -398,7 +398,7 @@ main.__app-design {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   main.__app-design {
     grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
@@ -431,7 +431,7 @@ main.__graphic-design {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   main.__graphic-design {
     grid-template-rows: 25.2rem 47.8rem 30.8rem 6rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
@@ -498,7 +498,7 @@ header {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   header {
     padding: 0;
   }
@@ -644,7 +644,7 @@ span.clicked:nth-child(3) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .project-type-cards {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -744,7 +744,7 @@ span.clicked:nth-child(3) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .project-type-card .img-container img:nth-child(3) {
     display: block;
     position: absolute;
@@ -754,7 +754,7 @@ span.clicked:nth-child(3) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .project-type-card:nth-child(1) {
     grid-column: 1/2;
     grid-row: 1/3;
@@ -800,7 +800,7 @@ footer::before {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .call-to-action {
     padding: 7.1rem 9.6rem;
     display: flex;
@@ -825,7 +825,7 @@ footer::before {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .call-to-action .text-container h1 {
     text-align: left;
     width: 26.9rem;
@@ -845,7 +845,7 @@ footer::before {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .call-to-action .text-container p {
     text-align: left;
     width: 43rem;
@@ -991,7 +991,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .hero__shared-banner .text-container h1 {
     width: 38rem;
   }
@@ -1009,7 +1009,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .hero__shared-banner .text-container p {
     width: 41rem;
   }
@@ -1047,7 +1047,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .project-cards {
     grid-template-rows: repeat(2, 47.8rem);
     grid-template-columns: repeat(3, 35rem);
@@ -1086,7 +1086,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .project-card {
     max-width: unset;
   }
@@ -1153,7 +1153,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .home__hero {
     grid-template-rows: 14.5rem 13.7rem 3.7rem 7.1rem 4.7rem 5.6rem 14.5rem;
     grid-template-columns: 9.5rem 47.5rem 1fr;
@@ -1193,7 +1193,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .home__hero .hero__title {
     max-width: 47.5rem;
     text-align: left;
@@ -1206,7 +1206,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .home__hero .hero__context {
     max-width: 43.5rem;
     text-align: left;
@@ -1230,7 +1230,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .home__hero .hero__bk-img {
     right: 0;
     left: unset;
@@ -1245,7 +1245,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   z-index: 0;
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .home__hero .hero__phone-img {
     right: -8rem;
     bottom: -24rem;
@@ -1265,7 +1265,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
   }
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1120px) {
   .about-cards {
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 1fr);
