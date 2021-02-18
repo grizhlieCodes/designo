@@ -10,10 +10,8 @@
 
 //below code works for 3 or 2 cards.
 .project-type-cards {
-    // grid-area: project-cards;
     row-gap: 2.4rem;
     display: grid;
-    // grid-auto-flow: column;
     grid-template-columns: 1fr ;
     grid-template-rows: repeat(autofill, 25rem);
 
@@ -99,51 +97,9 @@
     }
 }
 
-//Project card: Use correct img per viewport size
-.project-type-card .img-container {
-
-    //show 1st image on mob
-    img:nth-child(1) {
-        display: block;
-        position: absolute;
-    }
-
-    //hide not:1st image on mob
-    img:not(:nth-child(1)){
-        display: none;
-    }
-
-
-    //Tablet of above
-    @include breakpoint(tablet) {
-        //show 2nd image on tablet
-        img:nth-child(2) {
-            display: block;
-            position: absolute;
-        }
-        //show 2nd image on tablet
-        img:not(:nth-child(2)){
-            display: none;
-        }
-    }
-
-    //Desktop of above
-    @include breakpoint(desktop) {
-        //show 3rd image on tablet
-        img:nth-child(3) {
-            display: block;
-            position: absolute;
-        }
-
-        //show 3rd image on tablet
-        img:not(:nth-child(3)){
-            display: none;
-        }
-    }
-}
-
 //Project card: position the cards correctly in project-cards grid.
 .project-type-card {
+
     @include breakpoint(desktop) {
 
         //if 1st card, place in first col
@@ -157,11 +113,11 @@
             grid-column: 2/3;
         }
 
-
         &:last-child {
             &:not(:nth-child(3)){
                 grid-row: 1/3;
             }
         }
     }
+    
 }

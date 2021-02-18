@@ -1,8 +1,6 @@
 .home__hero {
     background: v(peach);
-    // grid-area: hero;
     display: grid;
-    justify-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 8rem 11.8rem 1.4rem 10rem 2.4rem 5.6rem 1fr;
     grid-template-areas: 
@@ -14,11 +12,13 @@
     "button"
     "....."
     ;
+    justify-items: center;
     position: relative;
     z-index: 0;
     overflow: hidden;
 
     @include breakpoint(tablet){
+        border-radius: 1.5rem;
         grid-template-rows: 6.1rem 13.7rem 3.6rem 7.1rem 2.6rem 5.6rem 1fr;
         grid-template-areas: 
         "....."
@@ -46,11 +46,12 @@
     }
 
     .hero__title {grid-area: title;}
-    .hero__button {grid-area: button;}
     .hero__context { grid-area: context;}
+    .hero__button {grid-area: button;}
 
+    //*******END OF LAYOUT**********
 
-
+    //giving a higher z-index so background images are not selected by accident.
     .hero__title,
     .hero__context,
     .hero__button {
@@ -65,8 +66,6 @@
     }
 
     .hero__title {
-        // grid-area: title;
-
         @include breakpoint(tablet) {
             max-width: 57.3rem;
         }
@@ -76,8 +75,8 @@
             text-align: left;
         }
     }
+
     .hero__context {
-        // grid-area: context;
         @include breakpoint(tablet) {
             max-width: 44.5rem;
         }
@@ -86,7 +85,6 @@
             text-align: left;
         }
     }
-
 
     .hero__bk-img {
         width: 64rem;
@@ -100,6 +98,7 @@
             left: unset;
             right: -8.5rem;
             top: 10.2rem;
+            transform: translateY(0%);
         }
 
         @include breakpoint(desktop) {
@@ -109,7 +108,6 @@
             transform: translateY(0%);
 
         }
-
 
     }
 
@@ -125,67 +123,8 @@
     }
 }
 
-//My project-card SCSS is elsewhere (see components)
+//My project-type-cards SCSS is elsewhere (see components)
 
-.about-cards {
-    // grid-area: about-cards;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(autofill, 1fr); //autofill = 3 rows of 1fr = 1 row = 33.33%
-    gap: 8rem;
-
-    @include breakpoint(tablet){
-        gap: 3.2rem;
-    }
-
-    @include breakpoint(desktop){
-        grid-auto-flow: column;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column: 1/2;
-        gap: 3rem;
-    }
-
-    .about-card {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 20.2rem 1fr; //33.33% ^
-        row-gap: 4.8rem;
-        justify-items: center;
-
-        .text-container {
-            h3, p {
-                text-align: center;
-            }
-            h3 {
-                margin-bottom: 3.4rem;
-            }
-        }
-
-        @media screen and (min-width: 768px) and (max-width: 1110px){
-            grid-template-columns: 20.2rem 1fr;
-            grid-template-rows:  1fr;
-            column-gap: 4.8rem;
-            align-items: center;
-
-            .text-container {
-                h3, p {
-                    text-align: left;
-                }
-                h3 {
-                        margin-bottom: 1.6rem;
-                }
-            }
-        }
-
-        .img-container {
-            height: 20.2rem;
-            width: 20.2rem;
-            position: relative;
-
-            img {
-                position: absolute;
-            }
-        }
-    }
-}
+//My about-cards SCSS is elsewhere (see components)
+    //about-cards are VERY similar to location cards.
+    //They share the same file.

@@ -11,6 +11,7 @@ header {
     background: v(white);
 
     @include breakpoint(tablet) {
+        height: 15.5rem;
         padding: 0 3.9rem;
     }
 

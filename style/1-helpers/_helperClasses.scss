@@ -5,20 +5,69 @@
 }
 
 .rotate-90 {
-    transform: rotate(90deg)
+    transform: rotate(90deg) !important;
 }
 
 .rotate-180 {
-    transform: rotate(180deg)
+    transform: rotate(180deg) !important;
 }
 
 .rotate-270 {
-    transform: rotate(90deg)
+    transform: rotate(270deg) !important;
 }
 
 //COLORS
 
 .col-white {
     color: white;
+}
+
+//triple-image-helper
+
+//this helps us show the correct image as per the screen-width
+//I could have use src-set, however the images were sometimes different in
+//ratios so that was messing it all up since src-set works with ratio.
+//So instead we went for this solution.
+
+.img-container.triple-image{
+
+    //show 1st image on mob
+    img:nth-child(1) {
+        display: block;
+        position: absolute;
+    }
+
+    //hide not:1st image on mob
+    img:not(:nth-child(1)){
+        display: none;
+    }
+
+
+    //Tablet of above
+    @include breakpoint(tablet) {
+        //show 2nd image on tablet
+        img:nth-child(2) {
+            display: block;
+            position: absolute;
+        }
+        //show 2nd image on tablet
+        img:not(:nth-child(2)){
+            display: none;
+        }
+    }
+
+    //Desktop of above
+    @include breakpoint(desktop) {
+        //show 3rd image on tablet
+        img:nth-child(3) {
+            display: block;
+            position: absolute;
+        }
+
+        //show 3rd image on tablet
+        img:not(:nth-child(3)){
+            display: none;
+        }
+    }
 }
 

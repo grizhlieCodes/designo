@@ -5,7 +5,7 @@ main {
 
     //Study grid-areas in order to understand the structure.
     &.__web-design {
-        
+
         //Mobile
         grid-template-rows: 32rem 306.8rem 52.4rem 0.1rem;
         row-gap: 9.6rem;
@@ -33,8 +33,10 @@ main {
             "project-type-cards"
             ".";
         }
+
         .shared__hero { grid-area: hero; }
         .project-type-cards {grid-area: project-type-cards; }
         .project-cards { grid-area: project-cards; }
     }
+
 }

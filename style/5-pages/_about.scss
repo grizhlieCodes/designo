@@ -1,0 +1,137 @@
+//Styling for all about-cards, including the hero card on the about-page.
+.about-info-card {
+    width: 100%;
+    @include flex(column, wrap, space-around, center);
+    position: relative;
+    margin: 0 auto;
+    background: #FDF3F0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+
+    //Hero styling is more unique in terms of color
+    &.hero {
+        background: v(peach);
+
+        .text-container {
+            color: v(white);
+
+            h2 {
+                color: inherit;
+            }
+        }
+    }
+
+    @include breakpoint(desktop){
+        @include flex(row-reverse, nowrap, space-between, center);
+
+        &.normal-row{
+            flex-direction: row;
+        }
+    }
+
+    &__bk-image {
+        opacity: 0.25;
+        position: absolute;
+        left: 0;
+        bottom: -3rem;
+        transform: rotate(180deg);
+        user-select: none;
+
+        &.hero-bg-image {
+            right: 0%;
+            left: unset;
+            top: 20rem;
+            width: 29.2rem;
+            opacity: 1;
+            transform: none;
+
+            @include breakpoint(tablet) {
+                right: unset;
+                left: -10rem;
+                top: -10rem;
+                width: 64rem;
+            }
+
+            @include breakpoint(desktop) {
+                left: 0;
+                bottom: 0;
+                top: unset;
+            }
+
+        }
+
+        @include breakpoint(desktop) {
+            left: 0;
+            bottom: 0;
+            opacity: 0.2;
+
+            &.special-bg-image {
+                left: 50%;
+                transform: translate(-30%, 0) rotate(180deg);
+            }
+        }
+    }
+
+    .img-container {
+        width: 100%;
+        height: 32rem;
+        flex: 0 0 32rem;
+
+        @include breakpoint(desktop){
+            height: 100%;
+            width: auto;
+            flex: 0 0 47.6rem;
+        }
+
+        img {
+            width: 100%;
+            height: 32rem;
+            object-fit: cover;
+            object-position: center;
+
+            @include breakpoint(desktop){
+                height: 100%;
+                width: auto;
+                flex: 0 0 64rem;
+            }
+        }
+    }
+
+    .text-container {
+        width: 100%;
+        width: 32.7rem;
+        flex: 1 0 auto;
+        @include flex(column, wrap, center, center);
+
+        @include breakpoint(tablet){
+            width: 57.2rem;
+        }
+
+        @include breakpoint(desktop){
+            align-items: flex-start;
+            padding: 0 9.3rem;
+        }
+
+        *:not(:nth-last-child(1)) {
+            margin-bottom: 2.4rem;
+        }
+
+        h2 {
+            color: v(peach);
+            font-weight: v(f500);
+
+            @include breakpoint(desktop){
+                text-align: left;
+            }
+        }
+
+        p {
+            text-align: center;
+
+            @include breakpoint(desktop){
+                text-align: left;
+            }
+        }
+    }
+}
+

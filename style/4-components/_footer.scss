@@ -23,6 +23,10 @@ footer {
     position: relative;
     overflow: hidden;
 
+    *:not(img){
+        z-index: 5;
+    }
+
     @include breakpoint(tablet){
         padding: 5.7rem 0;
     }
@@ -68,6 +72,7 @@ footer {
     }
 
     img {
+        user-select: none;
         position: absolute;
         top: 50%;
         transform: translate(4%, -50%);
@@ -120,7 +125,13 @@ footer .links {
 
 //ADDRESS
 footer .address {
+
+    color: v(light-grey);
     text-align: center;
+
+    p:nth-child(1){
+        font-weight: v(f600)
+    }
 
     @include breakpoint(tablet) {
         text-align: left;
@@ -130,8 +141,13 @@ footer .address {
 
 //CONTACT
 footer .contact {
+    
+    color: v(light-grey);
     text-align: center;
 
+    p:nth-child(1){
+        font-weight: v(f600)
+    }
     @include breakpoint(tablet) {
         text-align: left;
     }

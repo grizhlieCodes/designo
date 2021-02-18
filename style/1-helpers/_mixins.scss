@@ -13,20 +13,63 @@
     place-items: center;
 }
 
+
+
+
+
+
+
 //Mobile first -> Tablet -> Desktop
 //Media queries for Tablet and Desktop sized screens respectively.
 @mixin breakpoint($point){
+
+    $tablet: 768px;
+    $desktop: 1120px;
+
     @if ($point == tablet) {
-        @media screen and (min-width: 768px) {@content;}
+        @media screen and (min-width: $tablet) {@content;}
     }
 
     @else if ($point == desktop) {
-        @media screen and (min-width: 1120px) {@content;}
+        @media screen and (min-width: $desktop) {@content;}
     }
+
 }
+
+//mixin
+
+//paste mixin code{@we will add further code to our mixin code}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //The v-function is used to write cleaner variables (makes them easier to read)
+
+
+
+
 @function v($var){
     @return var(--#{$var});
 }
+
+
+
+
+
+
+@mixin setGrid($rows, $columns){
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $columns;
+}
+

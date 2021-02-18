@@ -1,5 +1,4 @@
 //Every page will use the below main template-columns. 
-//That's why it's in global.
 
 //The logic here is to use columns as width and margin.
 
@@ -13,12 +12,6 @@ main {
     }
 
     @include breakpoint(desktop){
-        grid-template-columns: minmax(100%, 1111px); 
+        grid-template-columns: 100%; 
     }
-
-}
-
-.teeest {
-    color:black;
-    background: white;
 }

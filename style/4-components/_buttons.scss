@@ -1,27 +1,29 @@
 button {
+    font-family: 'Jost', sans-serif;
     width: 15.2rem;
     height: 5.6rem;
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
-    font-weight: v(f600);
+    font-weight: v(f500);
     border-radius: 0.8rem;
     z-index: 500; 
-}
+    text-transform: uppercase;
 
-button.light {
-    background: v(white);
-    color: v(dark-grey);
-}
+    &.light {
+        background: v(white);
+        color: v(dark-grey);
+    }
 
-button.dark {
-    background: v(peach);
-    color: v(white);
-}
+    &.dark {
+        background: v(peach);
+        color: v(white);
+    }
 
-button:hover,
-button.light:hover,
-button.dark:hover {
-    cursor: pointer;
-    background: v(light-peach);
-    color: v(white);
+    &:hover,
+    .light:hover,
+    .dark:hover {
+        cursor: pointer;
+        background: v(light-peach);
+        color: v(white);
+    }
 }

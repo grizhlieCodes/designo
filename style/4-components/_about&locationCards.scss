@@ -1,0 +1,84 @@
+.about-cards,
+.location-cards {
+    // grid-area: about-cards;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(autofill, 1fr); //autofill = 3 rows of 1fr = 1 row = 33.33%
+    gap: 8rem;
+
+    @include breakpoint(tablet){
+        gap: 3.2rem;
+    }
+
+    @include breakpoint(desktop){
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column: 1/2;
+        gap: 3rem;
+    }
+
+    .about-card,
+    .location-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20.2rem 1fr;
+        row-gap: 4.8rem;
+        justify-items: center;
+
+        .text-container {
+            h3, p {
+                text-align: center;
+            }
+            h3 {
+                margin-bottom: 3.4rem;
+            }
+        }
+
+        .img-container {
+            height: 20.2rem;
+            width: 20.2rem;
+            position: relative;
+
+            img {
+                position: absolute;
+            }
+        }
+    }
+
+    .location-card {
+
+        h3 {
+            text-transform: uppercase;
+        }
+        button {
+            margin-top: -2.6rem;
+
+            @include breakpoint(tablet){
+                margin-top: -7.6rem;
+            } 
+
+            @include breakpoint(desktop){
+                margin-top: -5.6rem;
+            } 
+        }
+    }
+
+    .about-card {
+        @media screen and (min-width: 768px) and (max-width: 1110px){
+            grid-template-columns: 20.2rem 1fr;
+            grid-template-rows:  1fr;
+            column-gap: 4.8rem;
+            align-items: center;
+
+            .text-container {
+                h3, p {
+                    text-align: left;
+                }
+                h3 {
+                        margin-bottom: 1.6rem;
+                }
+            }
+        }
+    }
+}
