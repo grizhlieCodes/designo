@@ -555,10 +555,13 @@ main.__contact .location-cards {
   grid-area: location;
 }
 
-button {
+button,
+.button {
   font-family: 'Jost', sans-serif;
   width: 15.2rem;
   height: 5.6rem;
+  line-height: 5.6rem;
+  text-align: center;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   font-weight: var(--f500);
@@ -567,19 +570,24 @@ button {
   text-transform: uppercase;
 }
 
-button.light {
+button.light,
+.button.light {
   background: var(--white);
   color: var(--dark-grey);
 }
 
-button.dark {
+button.dark,
+.button.dark {
   background: var(--peach);
   color: var(--white);
 }
 
 button:hover,
 button .light:hover,
-button .dark:hover {
+button .dark:hover,
+.button:hover,
+.button .light:hover,
+.button .dark:hover {
   cursor: pointer;
   background: var(--light-peach);
   color: var(--white);
