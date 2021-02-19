@@ -26,7 +26,7 @@ main {
 
         @include breakpoint(desktop) {
             row-gap: 16rem;
-            grid-template-rows: 64rem 64rem 41.2rem 6rem;
+            grid-template-rows: 64rem 64rem 41.2rem 3rem;
             grid-template-areas:
             "hero"
             "project-type-cards"

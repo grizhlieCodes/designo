@@ -330,7 +330,7 @@ main.__home {
 @media screen and (min-width: 1120px) {
   main.__home {
     row-gap: 16rem;
-    grid-template-rows: 64rem 64rem 41.2rem 6rem;
+    grid-template-rows: 64rem 64rem 41.2rem 3rem;
     grid-template-areas: "hero" "project-type-cards" "about-cards" ".";
   }
 }
@@ -363,7 +363,7 @@ main.__web-design {
 
 @media screen and (min-width: 1120px) {
   main.__web-design {
-    grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
+    grid-template-rows: 25.2rem 98.8rem 30.8rem 0.1rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
   }
 }
@@ -450,7 +450,7 @@ main.__app-design {
 @media screen and (min-width: 1120px) {
   main.__app-design {
     row-gap: 16rem;
-    grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
+    grid-template-rows: 25.2rem 98.8rem 30.8rem 0.1rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
   }
 }
@@ -484,7 +484,7 @@ main.__graphic-design {
 @media screen and (min-width: 1120px) {
   main.__graphic-design {
     row-gap: 16rem;
-    grid-template-rows: 25.2rem 47.8rem 30.8rem 6rem;
+    grid-template-rows: 25.2rem 47.8rem 30.8rem 0.1rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
   }
 }
