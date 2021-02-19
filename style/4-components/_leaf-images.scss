@@ -1,0 +1,73 @@
+main {
+    position: relative;
+
+    .leaf-image {
+        display: none;
+
+        @include breakpoint(desktop){
+            display:unset;
+        }
+    }
+}
+
+.leaf-image {
+    z-index: -50;
+    position: absolute;
+}
+
+
+main.__home {
+    
+    .leaf-image.top {
+        top: 47.6rem;
+        left: -16.4rem;
+        transform: translate(0, -30%);
+    }
+    
+    .leaf-image.bottom {
+        transform: rotate(180deg);
+        bottom: -13rem;
+        right: -16.4rem;
+    }
+    
+}
+
+
+main.__about {
+    
+    .leaf-image.top {
+        top: 47.6rem;
+        left: -16.4rem;
+        transform: translate(0, -30%);
+    }
+    
+    .leaf-image.bottom {
+        transform: rotate(180deg);
+        bottom: 47rem;
+        right: -55.4rem;
+    }
+    
+}
+
+main.__contact {
+
+    .leaf-image.bottom {
+        transform: rotate(180deg);
+        bottom: -19rem;
+        right: -16.4rem;
+    }
+    
+}
+
+
+main.__web-design,
+main.__app-design,
+main.__graphic-design {
+    
+    .leaf-image.top {
+        top: 26.6rem;
+        left: -16.4rem;
+        transform: translate(0, -30%);
+    }
+
+}
