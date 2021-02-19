@@ -16,20 +16,101 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
 
-   <script>
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13); 
-  
-  </script>
+  <script defer src="/script/maps.js"></script>
 
   <title>Frontend Mentor | Designo Agency Website Challenge</title>
 </head>
 <body>
+  <header>
+    <a href="/index.html" class="logo-container">
+      <img src="/assets/shared/desktop/logo-dark.png" alt="" class="logo">
+    </a>
+    <nav>
+      <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <div class="mapid" style="height: 500px; width: 500px;">
+
+      <div class="navigation-links inactive">
+        <a href="/pages/about.html" class="navbar__header-link">Our Company</a>
+        <a href="/pages/locations.html" class="navbar__header-link">Locations</a>
+        <a href="/pages/contact.html" class="navbar__header-link">Contact</a>
+      </div>
 
 
+    </nav>
 
-  </div>
+  </header>
+  <div class="dark-backdrop inactive"></div>
+
+  <main class="__locations">
+    <section class="map-cards">
+
+      <div class="map-card">
+        <div class="map" id="canada"></div>
+        <div class="text-container">
+          <img src="/assets/shared/desktop/bg-pattern-three-circles.svg" alt="">
+
+          <h1>Canada</h1>
+          <div class="info-container">
+            <div class="address">
+              <p>Designo Central Office</p>
+              <p>3886 Wellington Street</p>
+              <p>Toronto, Ontario M9C 3J5</p>
+            </div>
+            <div class="contact">
+              <p>Contact </p>
+              <p>P : +1 253-863-8967</p>
+              <p>M : contact@designo.co</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map" id="australia"></div>
+        <div class="text-container">
+          <img src="/assets/shared/desktop/bg-pattern-three-circles.svg" alt="">
+          <h1>Australia</h1>
+          <div class="info-container">
+            <div class="address">
+              <p>Designo AU Office</p>
+              <p>19 Balonne Street</p>
+              <p>New South Wales 2443</p>
+            </div>
+            <div class="contact">
+              <p>Contact</p>
+              <p>P : (02) 6720 9092</p>
+              <p>M : contact@designo.au</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map" id="unitedKingdom"></div>
+        <div class="text-container">
+          <img src="/assets/shared/desktop/bg-pattern-three-circles.svg" alt="">
+          <h1>United Kingdom</h1>
+          <div class="info-container">
+            <div class="address">
+              <p>Designo UK Office</p>
+              <p>13  Colorado Way</p>
+              <p>Rhyd-y-fro SA8 9GA</p>
+            </div>
+            <div class="contact">
+              <p>Contact </p>
+              <p>P : 078 3115 1400</p>
+              <p>M : contact@designo.uk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
 
   <footer>
     <div class="call-to-action">

@@ -3,9 +3,9 @@
     // grid-area: about-cards;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(autofill, 1fr); //autofill = 3 rows of 1fr = 1 row = 33.33%
+    grid-template-rows: repeat(auto-fill, 36.4rem); //autofill = 3 rows of 1fr = 1 row = 33.33%
     gap: 8rem;
-
+    
     @include breakpoint(tablet){
         gap: 3.2rem;
     }

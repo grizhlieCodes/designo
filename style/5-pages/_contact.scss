@@ -1,0 +1,198 @@
+main.__contact {
+    .form-container {
+        background: v(peach);
+        @include flex(column, nowrap, flex-start, center);
+        padding: 7.2rem 2.4rem;
+        position: relative;
+        overflow: hidden;
+
+        @include breakpoint(desktop){
+            padding: 0 9.5rem;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+
+
+        img {
+            position: absolute;
+
+            &:nth-child(1){
+                left: 50%;
+                transform: translate(-35%)
+            }
+
+            &:nth-child(2){
+                display: none;
+            }
+
+            @include breakpoint(tablet){
+                &:nth-child(1){
+                    display: none;
+                }
+
+                &:nth-child(2){
+                    display: block;
+                    top: -5rem;
+                    left: -10rem;
+                }
+            }
+
+        }
+
+
+
+
+        .text-container {
+            text-align: center;
+            color: v(white);
+            margin-bottom: 4rem;
+
+            @include breakpoint(tablet){
+                text-align: left;
+            }
+
+            @include breakpoint(desktop){
+                max-width: 44.5rem;
+            }
+
+            h1 {
+                margin-bottom: 2.4rem;
+            }
+
+            p {
+                max-width: 57.3rem;
+            }
+        }
+
+
+        form {
+            max-width: 57.3rem;
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+
+            @include breakpoint(desktop){
+                width: 38rem;
+            }
+
+
+            input,
+            textarea {
+                outline: none;
+                border: none;
+                background: none;
+            }
+
+            .form-item:nth-child(3){
+                margin-bottom: 4rem;
+            }
+
+            .form-item {
+                width: 100%;
+                // background: salmon;
+                position: relative;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid white;
+
+                
+
+
+                input,
+                textarea {
+                    width: 100%;
+                    height: 5rem;
+                    padding-left: 2rem;
+                    font-size: 1.5rem;
+                    color: white;
+
+                    &:focus-within + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: scale(0.7,0.7) translate(-1rem, -3rem);
+                        opacity: 0.3;
+                    }
+                }
+
+                label {
+                    font-size: 1.5rem;
+                    position: absolute;
+                    left: 2rem;
+                    bottom: 1.5rem;
+                    color: white;
+                    opacity: 0.5;
+                    transform: scale(1,1);
+                    transition: transform 150ms ease-in-out;
+                }
+
+                span {
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    background: white;
+                    transform: scaleX(0);
+                    bottom: 0;
+                    left: 0;
+                    transform-origin: 0px 0px;
+                    transition: transform 150ms ease-in-out;
+                }
+
+                &:focus-within {
+                    span {
+                        transform: scaleX(1);
+                    }
+                }
+
+                textarea {
+                    height: 8rem;
+
+                    & + label {
+                        bottom: 6rem;
+                    }
+
+                    &:focus-within + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: scale(0.7,0.7) translate(-2rem, -4rem);
+                    }
+
+                }
+            }
+
+            
+            .error {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 0;
+                bottom: 1rem;
+                color: v(white);
+                transition: opacity 150ms ease;
+
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-left: 0.8rem;
+                }
+            }
+
+            .error.false {
+                opacity: 0;
+            }
+
+            .error.true {
+                opacity: 1;
+            }
+
+            button {
+                align-self: center;
+
+                @include breakpoint(tablet){
+                    align-self: flex-end;
+                }
+            }
+
+        }
+    }
+}
+

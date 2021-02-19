@@ -7,6 +7,7 @@ body, *, :root {
 //(When normal desktop styled menu pops up)
 @media screen and (max-width: 767px){
     .dis-none {
+        display: none !important;
         transform-origin: 0 0;
         transform: scale(1, 0.3);
         opacity: 0;
@@ -24,4 +25,10 @@ body, *, :root {
     }
 }
 
+
+//Set up an additiona class of display-none. It just sets stuff to display none.
+
+//This is for navigation + backdrop.
+
+//Then rewrite the JS to accomodate for the change. 
 

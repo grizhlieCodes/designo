@@ -1,0 +1,37 @@
+main {
+
+    //The columns for all pages are identical. 
+    //This can be found in 3-layout/_sharedMain
+
+    //Study grid-areas in order to understand the structure.
+    &.__contact {
+        
+        //Mobile
+        grid-template-rows: 76.4rem 118.8rem 0.1rem;
+        row-gap: 12rem;
+        grid-template-areas: 
+        "form           form          form"
+        ".........   location    ........."
+        "...             ...           ...";
+
+        @include breakpoint(tablet){
+            grid-template-rows: 71.1rem 123rem 0.1rem;
+            grid-template-areas:
+            "...     form      ..."
+            ".........    location     ........."
+            "...       ...       ...";
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-rows: 48rem 36.4rem 0.1rem;
+            grid-template-areas:
+            "form"
+            "location"
+            "      .       "
+            ;
+        }
+        
+        .form-container { grid-area: form; }
+        .location-cards { grid-area: location; }
+    }
+}

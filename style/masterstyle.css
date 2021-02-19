@@ -128,6 +128,7 @@ body, *, :root {
 
 @media screen and (max-width: 767px) {
   .dis-none {
+    display: none !important;
     transform-origin: 0 0;
     transform: scale(1, 0.3);
     opacity: 0;
@@ -241,6 +242,10 @@ footer .links a {
 
 .bold {
   font-weight: var(--f700);
+}
+
+textarea {
+  font-family: 'Jost', sans-serif;
 }
 
 main.__about {
@@ -510,6 +515,58 @@ main.__graphic-design .project-cards {
   grid-area: project-cards;
 }
 
+main.__locations {
+  grid-template-rows: 222.2rem 0.1rem;
+  row-gap: 12rem;
+  grid-template-areas: "map-cards    map-cards     map-cards" "...       ...       ...";
+}
+
+@media screen and (min-width: 768px) {
+  main.__locations {
+    grid-template-rows: 227.5rem 0.1rem;
+    grid-template-areas: "...     map-cards      ..." "...       ...       ...";
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  main.__locations {
+    grid-template-rows: 104.2rem 0.1rem;
+    grid-template-areas: "map-cards" "      .       ";
+  }
+}
+
+main.__locations .map-cards {
+  grid-area: map-cards;
+}
+
+main.__contact {
+  grid-template-rows: 76.4rem 118.8rem 0.1rem;
+  row-gap: 12rem;
+  grid-template-areas: "form           form          form" ".........   location    ........." "...             ...           ...";
+}
+
+@media screen and (min-width: 768px) {
+  main.__contact {
+    grid-template-rows: 71.1rem 123rem 0.1rem;
+    grid-template-areas: "...     form      ..." ".........    location     ........." "...       ...       ...";
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  main.__contact {
+    grid-template-rows: 48rem 36.4rem 0.1rem;
+    grid-template-areas: "form" "location" "      .       ";
+  }
+}
+
+main.__contact .form-container {
+  grid-area: form;
+}
+
+main.__contact .location-cards {
+  grid-area: location;
+}
+
 button {
   font-family: 'Jost', sans-serif;
   width: 15.2rem;
@@ -631,7 +688,7 @@ span.clicked:nth-child(3) {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-items: auto;
+  align-items: center;
   width: 100%;
   height: 23.5rem;
   padding: 4.8rem 2.5rem;
@@ -640,6 +697,25 @@ span.clicked:nth-child(3) {
   right: 0;
   left: 0;
   background: var(--dark-grey);
+  transform-origin: 0 0;
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation-links.inactive {
+    user-select: none;
+    transform: scale(1, 0.3);
+  }
+  .navigation-links.inactive * {
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.navigation-links.active {
+  transform: scale(1, 1);
+  opacity: 1;
 }
 
 .navigation-links a:hover {
@@ -684,12 +760,23 @@ span.clicked:nth-child(3) {
   right: 0;
   bottom: 0;
   background: var(--black);
+  transform-origin: 0 0;
+  transform: scale(1, 1);
+  opacity: 0.8;
+  transition: all 200ms ease-in-out;
+}
+
+.dark-backdrop.inactive {
+  user-select: none;
+  opacity: 0;
+  transform: scale(1, 0);
 }
 
 @media screen and (min-width: 768px) {
   .dark-backdrop {
     background: transparent;
     display: none;
+    user-select: none;
   }
 }
 
@@ -1187,7 +1274,7 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
 .location-cards {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(autofill, 1fr);
+  grid-template-rows: repeat(auto-fill, 36.4rem);
   gap: 8rem;
 }
 
@@ -1574,6 +1661,339 @@ footer .socialMedia-icons a:not(:nth-last-child(1)) {
 @media screen and (min-width: 1120px) {
   .about-info-card .text-container p {
     text-align: left;
+  }
+}
+
+.map-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  gap: 0.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .map-cards {
+    gap: 12rem;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .map-cards {
+    gap: 3rem;
+  }
+}
+
+.map-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 32rem 39.4rem;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .map-card {
+    gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .map-card {
+    grid-template-columns: 73rem 1fr;
+  }
+  .map-card:nth-child(even) {
+    grid-template-columns: 1fr 73rem;
+  }
+  .map-card:nth-child(even) .map {
+    grid-column: 1/2;
+  }
+  .map-card:nth-child(even) .text-container {
+    grid-column: 2/3;
+  }
+}
+
+.map-card .map {
+  grid-row: 1/2;
+  width: 100%;
+  height: 32rem;
+  z-index: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .map-card .map {
+    border-radius: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .map-card .map {
+    grid-column: 2/3;
+  }
+}
+
+.map-card .text-container {
+  grid-row: 2/3;
+  height: 100%;
+  background: #FDF3F0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .map-card .text-container {
+    border-radius: 1.5rem;
+    padding: 0 7.5rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .map-card .text-container {
+    grid-row: auto;
+    grid-column: 1/2;
+  }
+}
+
+.map-card .text-container img {
+  position: absolute;
+  bottom: -50;
+}
+
+@media screen and (min-width: 1120px) {
+  .map-card .text-container img {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.map-card .text-container h1 {
+  color: var(--peach);
+  margin-bottom: 2.4rem;
+}
+
+.map-card .text-container .info-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .map-card .text-container .info-container {
+    flex-direction: row;
+  }
+}
+
+.map-card .text-container .info-container .address {
+  margin-bottom: 2.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .map-card .text-container .info-container .address {
+    margin-bottom: unset;
+    margin-right: 11.1rem;
+  }
+}
+
+.map-card .text-container .info-container .address p:nth-child(1), .map-card .text-container .info-container .contact p:nth-child(1) {
+  font-weight: var(--f600);
+}
+
+main.__contact .form-container {
+  background: var(--peach);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7.2rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1120px) {
+  main.__contact .form-container {
+    padding: 0 9.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+main.__contact .form-container img {
+  position: absolute;
+}
+
+main.__contact .form-container img:nth-child(1) {
+  left: 50%;
+  transform: translate(-35%);
+}
+
+main.__contact .form-container img:nth-child(2) {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  main.__contact .form-container img:nth-child(1) {
+    display: none;
+  }
+  main.__contact .form-container img:nth-child(2) {
+    display: block;
+    top: -5rem;
+    left: -10rem;
+  }
+}
+
+main.__contact .form-container .text-container {
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  main.__contact .form-container .text-container {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  main.__contact .form-container .text-container {
+    max-width: 44.5rem;
+  }
+}
+
+main.__contact .form-container .text-container h1 {
+  margin-bottom: 2.4rem;
+}
+
+main.__contact .form-container .text-container p {
+  max-width: 57.3rem;
+}
+
+main.__contact .form-container form {
+  max-width: 57.3rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+@media screen and (min-width: 1120px) {
+  main.__contact .form-container form {
+    width: 38rem;
+  }
+}
+
+main.__contact .form-container form input,
+main.__contact .form-container form textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+main.__contact .form-container form .form-item:nth-child(3) {
+  margin-bottom: 4rem;
+}
+
+main.__contact .form-container form .form-item {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid white;
+}
+
+main.__contact .form-container form .form-item input,
+main.__contact .form-container form .form-item textarea {
+  width: 100%;
+  height: 5rem;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+main.__contact .form-container form .form-item input:focus-within + label,
+main.__contact .form-container form .form-item input:not(:placeholder-shown) + label,
+main.__contact .form-container form .form-item textarea:focus-within + label,
+main.__contact .form-container form .form-item textarea:not(:placeholder-shown) + label {
+  transform: scale(0.7, 0.7) translate(-1rem, -3rem);
+  opacity: 0.3;
+}
+
+main.__contact .form-container form .form-item label {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 1.5rem;
+  color: white;
+  opacity: 0.5;
+  transform: scale(1, 1);
+  transition: transform 150ms ease-in-out;
+}
+
+main.__contact .form-container form .form-item span {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  bottom: 0;
+  left: 0;
+  transform-origin: 0px 0px;
+  transition: transform 150ms ease-in-out;
+}
+
+main.__contact .form-container form .form-item:focus-within span {
+  transform: scaleX(1);
+}
+
+main.__contact .form-container form .form-item textarea {
+  height: 8rem;
+}
+
+main.__contact .form-container form .form-item textarea + label {
+  bottom: 6rem;
+}
+
+main.__contact .form-container form .form-item textarea:focus-within + label,
+main.__contact .form-container form .form-item textarea:not(:placeholder-shown) + label {
+  transform: scale(0.7, 0.7) translate(-2rem, -4rem);
+}
+
+main.__contact .form-container form .error {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  bottom: 1rem;
+  color: var(--white);
+  transition: opacity 150ms ease;
+}
+
+main.__contact .form-container form .error img {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.8rem;
+}
+
+main.__contact .form-container form .error.false {
+  opacity: 0;
+}
+
+main.__contact .form-container form .error.true {
+  opacity: 1;
+}
+
+main.__contact .form-container form button {
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  main.__contact .form-container form button {
+    align-self: flex-end;
   }
 }
 /*# sourceMappingURL=masterstyle.css.map */

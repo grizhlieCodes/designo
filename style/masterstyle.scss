@@ -24,6 +24,8 @@
 @import '3-layout/footerLayout';
 @import '3-layout/appDesLayout';
 @import '3-layout/graphDesLayout';
+@import '3-layout/locationsLayout';
+@import '3-layout/contactLayout';
 
 
 //****************************
@@ -45,4 +47,6 @@
 //****************************
 @import '5-pages/home';
 @import '5-pages/about';
+@import '5-pages/locations';
+@import '5-pages/contact';
 

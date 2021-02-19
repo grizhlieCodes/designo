@@ -1,0 +1,33 @@
+main {
+
+    //The columns for all pages are identical. 
+    //This can be found in 3-layout/_sharedMain
+
+    //Study grid-areas in order to understand the structure.
+    &.__locations {
+        
+        //Mobile
+        grid-template-rows: 222.2rem 0.1rem;
+        row-gap: 12rem;
+        grid-template-areas: 
+        "map-cards    map-cards     map-cards"
+        "...       ...       ...";
+
+        @include breakpoint(tablet){
+            grid-template-rows: 227.5rem 0.1rem;
+            grid-template-areas:
+            "...     map-cards      ..."
+            "...       ...       ...";
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-rows: 104.2rem 0.1rem;
+            grid-template-areas:
+            "map-cards"
+            "      .       "
+            ;
+        }
+        
+        .map-cards { grid-area: map-cards; }
+    }
+}
