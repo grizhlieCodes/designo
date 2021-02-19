@@ -41,7 +41,7 @@ footer {
 
     @include breakpoint(desktop){
         grid-template-columns: 1fr 38.1rem 55rem 18.4rem 1fr ;
-        grid-template-rows: 21.7rem 7.1rem 7.1rem 2.7rem 3.9rem 0.1rem 3.1rem 7.7rem 5.2rem;
+        grid-template-rows: 22rem 7.2rem 7.1rem 2.8rem 4rem 0.1rem 3.1rem 7.8rem 7.2rem;
         grid-template-areas:
         "... call-to-action call-to-action call-to-action ..." //1/2
         "... call-to-action call-to-action call-to-action ..." //2/3
