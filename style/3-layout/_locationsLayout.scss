@@ -21,6 +21,7 @@ main {
         }
 
         @include breakpoint(desktop) {
+            row-gap: 16rem;
             grid-template-rows: 104.2rem 0.1rem;
             grid-template-areas:
             "map-cards"

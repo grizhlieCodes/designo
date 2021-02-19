@@ -245,6 +245,7 @@ main.__about {
 
 @media screen and (min-width: 1120px) {
   main.__about {
+    row-gap: 16rem;
     grid-template-rows: 48rem 64rem 36.4rem 64rem 0.1rem;
     grid-template-areas: "hero" " talent-card  " "location-cards" "   deal-card  " "       .      ";
   }
@@ -328,6 +329,7 @@ main.__home {
 
 @media screen and (min-width: 1120px) {
   main.__home {
+    row-gap: 16rem;
     grid-template-rows: 64rem 64rem 41.2rem 6rem;
     grid-template-areas: "hero" "project-type-cards" "about-cards" ".";
   }
@@ -447,6 +449,7 @@ main.__app-design {
 
 @media screen and (min-width: 1120px) {
   main.__app-design {
+    row-gap: 16rem;
     grid-template-rows: 25.2rem 98.8rem 30.8rem 6rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
   }
@@ -480,6 +483,7 @@ main.__graphic-design {
 
 @media screen and (min-width: 1120px) {
   main.__graphic-design {
+    row-gap: 16rem;
     grid-template-rows: 25.2rem 47.8rem 30.8rem 6rem;
     grid-template-areas: "hero" "project-cards" "project-type-cards" ".";
   }
@@ -512,6 +516,7 @@ main.__locations {
 
 @media screen and (min-width: 1120px) {
   main.__locations {
+    row-gap: 16rem;
     grid-template-rows: 104.2rem 0.1rem;
     grid-template-areas: "map-cards" "      .       ";
   }
@@ -536,6 +541,7 @@ main.__contact {
 
 @media screen and (min-width: 1120px) {
   main.__contact {
+    row-gap: 16rem;
     grid-template-rows: 48rem 36.4rem 0.1rem;
     grid-template-areas: "form" "location" "      .       ";
   }

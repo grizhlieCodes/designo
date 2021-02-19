@@ -27,6 +27,7 @@ main {
         }
 
         @include breakpoint(desktop) {
+            row-gap: 16rem;
             grid-template-rows: 48rem 64rem 36.4rem 64rem 0.1rem;
             grid-template-areas:
             "hero"
