@@ -12,10 +12,7 @@ main.__contact {
             justify-content: space-between;
         }
 
-
-
-
-        img {
+        img.hero-img {
             position: absolute;
 
             &:nth-child(1){
@@ -167,7 +164,8 @@ main.__contact {
                 right: 0;
                 bottom: 1rem;
                 color: v(white);
-                transition: opacity 150ms ease;
+                transition: opacity 450ms ease;
+                user-select: none;
 
                 img {
                     width: 2rem;

@@ -1824,24 +1824,24 @@ main.__contact .form-container {
   }
 }
 
-main.__contact .form-container img {
+main.__contact .form-container img.hero-img {
   position: absolute;
 }
 
-main.__contact .form-container img:nth-child(1) {
+main.__contact .form-container img.hero-img:nth-child(1) {
   left: 50%;
   transform: translate(-35%);
 }
 
-main.__contact .form-container img:nth-child(2) {
+main.__contact .form-container img.hero-img:nth-child(2) {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-  main.__contact .form-container img:nth-child(1) {
+  main.__contact .form-container img.hero-img:nth-child(1) {
     display: none;
   }
-  main.__contact .form-container img:nth-child(2) {
+  main.__contact .form-container img.hero-img:nth-child(2) {
     display: block;
     top: -5rem;
     left: -10rem;
@@ -1970,7 +1970,8 @@ main.__contact .form-container form .error {
   right: 0;
   bottom: 1rem;
   color: var(--white);
-  transition: opacity 150ms ease;
+  transition: opacity 450ms ease;
+  user-select: none;
 }
 
 main.__contact .form-container form .error img {
