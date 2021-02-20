@@ -130,6 +130,10 @@ body, *, :root {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   font-family: 'Jost', sans-serif;
   font-size: 62.5%;
