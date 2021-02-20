@@ -3,6 +3,10 @@ const spans = Array.from(burger.querySelectorAll('span'))
 const inactives = Array.from(document.querySelectorAll('.inactive'))
 
 
+
+
+
+
 burger.addEventListener('click', () => {
 
     spans.forEach(span => {
